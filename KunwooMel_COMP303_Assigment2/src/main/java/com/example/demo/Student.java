@@ -25,6 +25,8 @@ public class Student {
 	private String city;
 	@Column(name="postalcode")
 	private String postalCode;
+	@Column(name="stdphone")
+	private String stdPhone;
 	@Column(name="doctorname")
 	private String doctorName;
 	@Column(name="docphone")
@@ -34,7 +36,7 @@ public class Student {
 	{}
 	
 	public Student(int studentId, String userName, String userPassword, String firstname, String lastname,
-			String address, String city, String postalCode, String doctorName, String docPhone) {
+			String address, String city, String postalCode, String stdPhone, String doctorName, String docPhone) {
 		super();
 		this.studentId = studentId;
 		this.userName = userName;
@@ -127,4 +129,13 @@ public class Student {
 	public void setDocPhone(String docPhone) {
 		this.docPhone = docPhone;
 	}
+
+	public String getStdPhone() {
+		return stdPhone;
+	}
+
+	public void setStdPhone(String stdPhone) {
+		this.stdPhone = stdPhone;
+	}
+	
 }
