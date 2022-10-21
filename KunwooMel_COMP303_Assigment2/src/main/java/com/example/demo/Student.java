@@ -46,6 +46,7 @@ public class Student {
 		this.address = address;
 		this.city = city;
 		this.postalCode = postalCode;
+		this.stdPhone= stdPhone;
 		this.doctorName = doctorName;
 		this.docPhone = docPhone;
 	}
