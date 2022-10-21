@@ -1,0 +1,62 @@
+@charset "ISO-8859-1";
+body {
+	background: #18b698;
+}
+
+input::placeholder {
+    font-weight: bold;
+    opacity: .5;
+    margin-left: 5px;
+    padding: 4px
+}
+
+.login-container {
+	display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    flex-direction: column;
+}
+
+.login-form {
+	display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 2rem;
+    border-radius: 26px;
+    box-shadow: 0px;
+    background: white;
+}
+
+.login-header {
+	background: #139B7F;
+    color: white;
+    height: 2em;
+    vertical-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+.input-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.login-input {
+	width: 68%;
+    height: 2em;
+    border-radius: 6px;
+    border: 1px solid #e1e1e1;
+}
+.login-btn {
+	height: 2em;
+    border-radius: 6px;
+    border: none;
+    background: #139B7F;
+    color: white;
+    text-align: 22px;
+    font-size: 1rem;
+}
