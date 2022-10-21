@@ -28,4 +28,10 @@ public class StudentController {
 //		empRepo.save(emp);
 		return "employee is added";
 	}
+	
+	@RequestMapping("/signIn")
+	public String Modify()
+	{
+		return "signIn";
+	}
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Kunwoo&Mel</title>
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
 
 </head>
@@ -22,6 +22,8 @@
 		</div>
 				<br>
 	<input class="login-btn" type="submit" value="Login"/>
+	<a class="register-btn" href="signIn">Register</a>
+	
 	</form>
 </div>
 

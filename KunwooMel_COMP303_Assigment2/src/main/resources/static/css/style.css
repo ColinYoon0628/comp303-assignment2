@@ -13,10 +13,10 @@ input::placeholder {
 .login-container {
 	display: flex;
     align-content: center;
-    justify-content: center;
     align-items: center;
     margin-top: 10%;
     flex-direction: column;
+    height: 2em;
 }
 
 .login-form {
@@ -57,6 +57,24 @@ input::placeholder {
     border: none;
     background: #139B7F;
     color: white;
-    text-align: 22px;
+    text-align: center;
     font-size: 1rem;
+    margin-bottom: 1em;
+}
+.register-btn {
+	height: 2em;
+    border-radius: 6px;
+    border: none;
+    background: #139B7F;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+a {
+ text-decoration: none;
+	
 }
