@@ -17,14 +17,14 @@ public class StudentController {
 	{
 		return "index";
 	}
-	@PostMapping("/login")
+	@PostMapping("/sports")
 	public @ResponseBody String add(
 			@RequestParam("userName") String userName,  
 			@RequestParam("userPassword") String userPassword)
 	{
 //		Employee emp = new Employee(empId, empName, jobTitle,salary, depNo);
 //		empRepo.save(emp);
-		return "student is added";
+		return "sports";
 	}
 	
 	@RequestMapping("/signIn")
