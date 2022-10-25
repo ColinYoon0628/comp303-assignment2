@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class StudentController {
 	@Autowired
 	private StudentRepository studentRepo;
+	@Autowired
+	private SportsRepository sportsRepo;
 	Map<String, Object> model = new HashMap<String, Object>();
 
 	@RequestMapping("/") //http://localhost:8085/
@@ -23,14 +26,18 @@ public class StudentController {
 		return "index";
 	}
 	@PostMapping("/login")
-	public @ResponseBody String add(
+	public @ResponseBody ModelAndView add(
 			@RequestParam("userName") String userName,  
 			@RequestParam("userPassword") String userPassword)
 	{
 		Student loggedInStudent = new Student();
 		loggedInStudent = studentRepo.findByUserName(userName).get(0);
+		List<Sports> sportsList;
+		sportsList = sportsRepo.findAll();
 		model.put("studentInfo", loggedInStudent);
-		return "sports";
+		model.put("sportsList", sportsList);
+
+		return new ModelAndView("sports","model", model);
 	}
 	
 	@RequestMapping("/signIn")
