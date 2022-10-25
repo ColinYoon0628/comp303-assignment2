@@ -10,15 +10,15 @@ import javax.persistence.Table;
 public class Sports {
 	@Id
 	@Column(name="sportid")
-	private int sportId;
+	public int sportId;
 	@Column(name="sportname")
-	private String sportName;
+	public String sportName;
 	@Column(name="duration")
-	private int duration;
+	public int duration;
 	@Column(name="fee")
-	private double fee;
+	public double fee;
 	@Column(name="coachname")
-	private String coachName;
+	public String coachName;
 	public int getSportId() {
 		return sportId;
 	}
