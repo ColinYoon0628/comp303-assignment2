@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="signIn-container">
-		<h1 class="login-header">Sign in</h1>
+		<h1 class="login-header">Sign Up</h1>
 
 <form class="signIn-form" action="signIn" method="POST">
 	<div class="signIn-input-container">
