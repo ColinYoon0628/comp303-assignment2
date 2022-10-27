@@ -1,52 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Sports Registration</title>
+<link href="${pageContext.request.contextPath}/resources/css/sports.css" rel="stylesheet">
+
 </head>
 <body>
+	<form class="sport-form" action="selectSports" method="post">
+		<h1>Select Your Course</h1>
+		<table>
+		  <tr>
+		    <td class="centent" style="padding:5px"> </td>
+		    <td class="centent" style="padding:5px">#</td>
+		    <td class="centent" style="padding:5px">Course</td>
+		    <td class="centent" style="padding:5px">Fee</td>
+		    <td class="centent" style="padding:5px">Duration</td>
+		    <td class="centent" style="padding:5px">Coach</td>
+		    
+		  </tr>
+		  <c:forEach var="sp" items="${model.sportsList}">
+	        <tr>
+	           <td class="centent" style="padding:5px"><input class="sport-checkbox" type="checkbox" value="${sp.sportId}" name="sportsCheckbox"></td>
+	           <td class="centent" style="padding:5px"><c:out value="${sp.sportId}"/></td>
+	           <td class="centent" style="padding:5px"><c:out value="${sp.sportName}"/></td>
+	           <td class="centent" style="padding:5px"><c:out value="$ ${sp.fee}"/></td>
+	           <td class="centent" style="padding:5px"><c:out value="${sp.duration} months"/></td>	           
+	           <td class="centent" style="padding:5px"><c:out value="${sp.coachName}"/></td>
+	        </tr>
+      </c:forEach>
+		</table>
+		<input class="sport-btn" type="submit" value="Select"/>
+		
+	</form>
 
-<div class="signIn-container">
-		<h1 class="login-header">Sports Registration</h1>
-
-<form class="sportRegistration-form" action="sportRegistratoin" method="POST">
-	<div class="sportRegistration-input-container">
-		<label>Sport ID
-		</label>
-		<input class="sportRegistration-input" type="text" name="sportId" required>
-	</div>
-	<div class="signIn-input-container">
-		<label>Sports Name
-		<span class="required">*</span>
-		</label>
-		<select id="sportName" name="sportName">
-	<option value=""></option>
-    <option value="Soccer">Soccer</option>
-    <option value="Basketball">Basketball</option>
-    <option value="Swimming">Swimming</option>
-    <option value="Golf">Golf</option>
-    <option value="Boxing">Boxing</option>
-  	</select>
-	</div>
-	<div class="signIn-input-container">
-		<label>Duration
-		</label>
-		<input class="sportRegistration-input" type="text" name="duration" required>
-	</div>
-	<div class="signIn-input-container">
-	     <label>Fee
-	     </label>
-	     <input class="sportRegistration-input" type="text" name="fee" required/>
-	</div>
-	<div class="signIn-input-container">
-		<label>Coach Name
-		</label>
-		<input class="sportRegistration-input" type="text" name="coachName" required/>
-	</div>
-   </form>
-</div>
 
 </body>
 </html>
