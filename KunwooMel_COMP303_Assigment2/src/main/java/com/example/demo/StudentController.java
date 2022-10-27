@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,8 @@ public class StudentController {
 	@Autowired
 	private SportsRepository sportsRepo;
 	Map<String, Object> model = new HashMap<String, Object>();
+	@Autowired
+	private RegistrationRepository registrationRepo;
 
 	@RequestMapping("/") //http://localhost:8085/
 	public String home() 
@@ -78,6 +81,25 @@ public class StudentController {
 		selectedSports = sportsRepo.findById(sportId).get(0);
 		model.put("selectedSports", selectedSports);
 		return new ModelAndView("register","model", model);
+        
+    }
+
+	@PostMapping("/registeredSports")
+    public @ResponseBody String add(@RequestParam("registrationId") int sportId,
+            @RequestParam("startDate") Date startDate,
+            @RequestParam("numberOfShirts") int numberOfShirts,
+            @RequestParam("numberOfShorts") int numberOfShorts)
+    {
+    	Sports registeredSports = new Sports();
+		registeredSports = sportsRepo.findById(sportId).get(0);
+		model.put("registeredSports", registeredSports);
+		//return new ModelAndView("confirmation", "model", model);
+		Registration registeredSport =new Registration(startDate,numberOfShirts,numberOfShorts, sportId);
+		registrationRepo.save(registeredSport);
+        return "sport was registered";
+            
+    
+		
         
     }
 	

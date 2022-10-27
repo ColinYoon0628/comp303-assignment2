@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+.registration{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+}
