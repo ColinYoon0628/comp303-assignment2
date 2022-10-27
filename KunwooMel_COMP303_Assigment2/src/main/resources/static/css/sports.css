@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+
+.sport-form {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sport-form > table > tr > td {
+text-align: center !important;
+margin:10px;
+}
+
+.content {
+margin:10px;
+}
+
+.sport-btn {
+	width: 200px;
+    border: none;
+    background: #139B7F;
+    color: white;
+    margin-top: 1em;
+    height: 2em;
+    font-size: 1em;
+}

@@ -64,4 +64,22 @@ public class StudentController {
         return "student is added";
         
     }
+	
+	@RequestMapping("/sports")
+	public String SelectSport()
+	{
+		return "signIn";
+	}
+	
+	@PostMapping("/selectSports")
+    public @ResponseBody ModelAndView add(@RequestParam("sportsCheckbox") int sportId)
+    {
+		Sports selectedSports = new Sports();
+		selectedSports = sportsRepo.findById(sportId).get(0);
+		model.put("selectedSports", selectedSports);
+		return new ModelAndView("register","model", model);
+        
+    }
+	
+
 }

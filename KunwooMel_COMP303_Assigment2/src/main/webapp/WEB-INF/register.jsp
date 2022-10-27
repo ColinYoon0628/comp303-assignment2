@@ -7,6 +7,6 @@
 <title>Register here</title>
 </head>
 <body>
-
+	<h1>${model.studentInfo.studentId} </h1>
 </body>
 </html>
