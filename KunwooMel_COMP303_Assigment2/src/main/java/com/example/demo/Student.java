@@ -10,27 +10,27 @@ import javax.persistence.Table;
 public class Student {
 	@Id
 	@Column(name="studentid")
-	private int studentId;
+	public int studentId;
 	@Column(name="username")
-	private String userName;
+	public String userName;
 	@Column(name="userpassword")
-	private String userPassword;
+	public String userPassword;
 	@Column(name="firstname")
-	private String firstname;
+	public String firstname;
 	@Column(name="lastname")
-	private String lastname;
+	public String lastname;
 	@Column(name="address")
-	private String address;
+	public String address;
 	@Column(name="city")
-	private String city;
+	public String city;
 	@Column(name="postalcode")
-	private String postalCode;
+	public String postalCode;
 	@Column(name="stdphone")
-	private String stdPhone;
+	public String stdPhone;
 	@Column(name="doctorname")
-	private String doctorName;
+	public String doctorName;
 	@Column(name="docphone")
-	private String docPhone;
+	public String docPhone;
 	
 	public Student()
 	{}

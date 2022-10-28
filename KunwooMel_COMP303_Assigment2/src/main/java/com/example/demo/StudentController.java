@@ -1,8 +1,11 @@
 package com.example.demo;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +21,8 @@ public class StudentController {
 	private StudentRepository studentRepo;
 	@Autowired
 	private SportsRepository sportsRepo;
+	@Autowired
+	private RegistrationRepository registrationRepo;
 	Map<String, Object> model = new HashMap<String, Object>();
 
 	@RequestMapping("/") //http://localhost:8085/
@@ -81,5 +86,40 @@ public class StudentController {
         
     }
 	
+	@RequestMapping("/register")
+	public String RegisterSport()
+	{
+		return "register";
+	}
+	
+	@PostMapping("/registeredSports")
+    public  @ResponseBody String registration(
+            @RequestParam("startDate") String startDate,
+            @RequestParam("numberOfShirts") String numberOfShirts,
+            @RequestParam("numberOfShorts") String numberOfShorts)
+    {
+		
+		Random random = new Random(System.nanoTime());
+		int randomInt = random.nextInt(1000000000);
+		  
+		int registrationId = randomInt;
+		Sports sport = (Sports) model.get("selectedSports");
+		Student student = (Student) model.get("studentInfo");
+		double amountPaid = sport.fee + (Integer.parseInt(numberOfShirts) + Integer.parseInt(numberOfShorts) *35);
+		Registration registeredSport = new Registration(
+				registrationId, 
+				student.studentId, 
+				sport.sportName,
+				sport.coachName,  
+				LocalDate.parse(startDate),
+				Integer.parseInt(numberOfShirts),
+				Integer.parseInt(numberOfShorts),
+				amountPaid
+				);
 
+		model.put("registeredSports", registeredSport);
+		registrationRepo.save(registeredSport);
+        return "sport was registered";
+	
+    }
 }
