@@ -43,18 +43,18 @@
 	</div>
 	
 	<div class="signIn-input-container">
-	<label>credit number: </label>
+	<label>Credit Card Number: </label>
 		<span class="required">*</span>
 		<input class="register-input" type="text" name="creditCard" required>
 	</div>
 	
 	<div class="signIn-input-container">
-		<label>expired date: </label>
+		<label>Expiry Date: </label>
 		<span class="required">*</span>
 		<input class="register-input" type="text" name="expired" required placeholder="mm/yyyy">
 	</div>
 	<div class="signIn-input-container">
-		<label>cvv: </label>
+		<label>CVV: </label>
 		<span class="required">*</span>
 		<input class="register-input" type="text" name="cvv" required>
 	</div>	

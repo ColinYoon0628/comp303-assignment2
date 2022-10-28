@@ -9,10 +9,10 @@
 
 </head>
 <body style="display: flex;flex-direction: column; align-items: center;align-content: center; margin-top: 8%;justify-content: center;">
-	<h1>Payment complete</h1>
+	<h1>Payment Complete</h1>
 	<h2>Thank you for your registration!</h2>
 	<form class="navigate-form" action="navigatoToHome" method="post">
-		<input class="navigate-btn" type="submit" value="Click to go to home page!"/>
+		<input class="navigate-btn" type="submit" value="Click to go to Home page!"/>
 	</form>
 </body>
 </html>

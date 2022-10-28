@@ -23,7 +23,7 @@
 </div>
 
 <div style="padding-left:16px">
-  <h2>Hello ${model.studentInfo.firstname}</h2>
+  <h2>Hello ${model.studentInfo.firstname}!</h2>
   <p>Some content..</p>
 </div>
 </body>
