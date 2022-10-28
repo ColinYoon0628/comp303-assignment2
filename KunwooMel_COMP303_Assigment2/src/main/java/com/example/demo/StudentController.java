@@ -169,4 +169,39 @@ public class StudentController {
     {
 		return new ModelAndView("profile","model", model);
     }
+	
+	@PostMapping("/editProfile")
+    public @ResponseBody ModelAndView update()
+
+    {
+        return new ModelAndView("editprofile","model", model);  
+    }
+	
+	@RequestMapping("/editprofile")
+	public String editProfile()
+	{
+		return "editprofile";
+	}
+	
+	@PostMapping("/update")
+    public @ResponseBody ModelAndView edit(
+    		@RequestParam("firstname") String firstname,
+    		@RequestParam("lastname") String lastname,
+    		@RequestParam("userName") String userName,
+            @RequestParam("address") String address,
+            @RequestParam("city") String city,
+            @RequestParam("postalCode") String postalCode,
+            @RequestParam("stdPhone") String stdPhone,
+            @RequestParam("doctorName") String doctorName,
+            @RequestParam("docPhone") String docPhone)
+    {
+		Student student = (Student) model.get("studentInfo");
+		String password = student.userPassword;
+		int studentId = student.studentId;
+		Student updatedStudent = new Student(studentId,userName,password,firstname,lastname,address,city,postalCode,stdPhone,doctorName, docPhone);
+		
+		studentRepo.save(updatedStudent);
+		
+        return new ModelAndView("home","model", model);
+    }
 }

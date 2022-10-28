@@ -71,3 +71,6 @@ section .col {
   width: 8rem;
     padding: 8px;
 }
+.profile-container{
+	align-content: center;
+}
