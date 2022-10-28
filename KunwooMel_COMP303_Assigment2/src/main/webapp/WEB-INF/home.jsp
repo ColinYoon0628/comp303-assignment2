@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/resources/css/home.css" rel="stylesheet">
+</head>
+<body>
+ <div class="topnav">
+  <a class="active" href="home">Home</a>
+  <a href="profile">Profile</a>
+  <a href="history">History</a>
+
+</div>
+
+<div style="padding-left:16px">
+  <h2>Hello ${model.studentInfo.firstname}</h2>
+  <p>Some content..</p>
+</div>
+</body>
+</html>

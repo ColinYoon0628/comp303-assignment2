@@ -93,7 +93,7 @@ public class StudentController {
 	}
 	
 	@PostMapping("/registeredSports")
-    public  @ResponseBody String registration(
+    public  @ResponseBody ModelAndView registration(
             @RequestParam("startDate") String startDate,
             @RequestParam("numberOfShirts") String numberOfShirts,
             @RequestParam("numberOfShorts") String numberOfShorts)
@@ -119,7 +119,24 @@ public class StudentController {
 
 		model.put("registeredSports", registeredSport);
 		registrationRepo.save(registeredSport);
-        return "sport was registered";
-	
+		return new ModelAndView("confirmation","model", model);
     }
+	@RequestMapping("/confirmation")
+	public String confirmation () 
+	{
+		return "confirmation";
+	}
+	
+	@PostMapping("/navigatoToHome")
+    public  @ResponseBody ModelAndView navigateHome()
+    {
+		
+		return new ModelAndView("home","model", model);
+    }
+	
+	@RequestMapping("/home")
+	public String Home() 
+	{
+		return "home";
+	}
 }

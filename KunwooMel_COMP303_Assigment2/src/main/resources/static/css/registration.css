@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+.registration-container {
+	display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.required {
+	color: red;
+}

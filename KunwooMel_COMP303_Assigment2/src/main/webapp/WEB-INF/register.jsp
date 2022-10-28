@@ -9,12 +9,9 @@
 </head>
 <body>
 
-<div class="registration">
+<div class="registration-container">
 	<h1>Registration Info </h1>
 	<form class="register-form" action="registeredSports" method="POST">
-	<div class="register-input-container">
-		<label></label>
-	</div>
 	Student ID: ${model.studentInfo.studentId}
 	<br>
 	Student : ${model.studentInfo.userName }
@@ -25,28 +22,46 @@
 	<br>
 	Amount Paid: $${model.selectedSports.fee }
 	<div class="signIn-input-container">
-		<label>Start Date:
+		<label>Start Date: 
 		<span class="required">*</span>
 		</label>
 		<input class="register-input" type="date" name="startDate" required>
 	</div>
+	
 	<div class="signIn-input-container">
 		<label>Number of Shirts:
 		<span class="required">*</span>
 		</label>
 		<input class="register-input" type="text" name="numberOfShirts" required>
 	</div>
+	
 	<div class="signIn-input-container">
 		<label>Number of Shorts:
 		<span class="required">*</span>
 		</label>
 		<input class="register-input" type="text" name="numberOfShorts" required>
 	</div>
+	
+	<div class="signIn-input-container">
+	<label>credit number: </label>
+		<span class="required">*</span>
+		<input class="register-input" type="text" name="creditCard" required>
+	</div>
+	
+	<div class="signIn-input-container">
+		<label>expired date: </label>
+		<span class="required">*</span>
+		<input class="register-input" type="text" name="expired" required placeholder="mm/yyyy">
+	</div>
+	<div class="signIn-input-container">
+		<label>cvv: </label>
+		<span class="required">*</span>
+		<input class="register-input" type="text" name="cvv" required>
+	</div>	
 	<div class="submit-btn-container">
 	    <input class="submit-btn" type="submit" name="Register Sport" value="Register Sports"/>
 	</div>
 	</form>
-
-</div>	
+</div>
 </body>
 </html>
