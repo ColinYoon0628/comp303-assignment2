@@ -199,7 +199,8 @@ public class StudentController {
 		String password = student.userPassword;
 		int studentId = student.studentId;
 		Student updatedStudent = new Student(studentId,userName,password,firstname,lastname,address,city,postalCode,stdPhone,doctorName, docPhone);
-		
+		model.put("studentInfo", updatedStudent);
+
 		studentRepo.save(updatedStudent);
 		
         return new ModelAndView("home","model", model);
