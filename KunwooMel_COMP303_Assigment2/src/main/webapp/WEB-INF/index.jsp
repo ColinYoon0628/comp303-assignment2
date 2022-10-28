@@ -18,7 +18,7 @@
 		</div>
 		<br>
 		<div class="input-container">
-		    <p style="flex:1;">Password:</p> <input placeholder="password" class="login-input" type="text" name="userPassword"/>
+		    <p style="flex:1;">Password:</p> <input placeholder="password" class="login-input" type="password" name="userPassword"/>
 		</div>
 				<br>
 	<input class="login-btn" type="submit" value="Login"/>

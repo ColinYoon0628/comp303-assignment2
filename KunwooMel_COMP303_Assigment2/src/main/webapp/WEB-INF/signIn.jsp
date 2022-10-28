@@ -29,7 +29,7 @@
 		<label>User password
 		<span class="required">*</span>
 		</label>
-		<input class="signIn-input" type="text" name="userPassword" required>
+		<input class="signIn-input" type="password" name="userPassword" required>
 	</div>
 	<div class="signIn-input-container">
 	     <label>First Name
