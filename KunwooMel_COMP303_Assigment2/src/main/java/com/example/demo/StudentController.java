@@ -170,14 +170,22 @@ public class StudentController {
 		return new ModelAndView("profile","model", model);
     }
 	
+	@PostMapping("/editProfile")
+    public @ResponseBody ModelAndView update()
+
+    {
+        return new ModelAndView("editprofile","model", model);  
+    }
+	
 	@RequestMapping("/editprofile")
-	public String Modify()
+	public String editProfile()
 	{
 		return "editprofile";
 	}
 	
 	@PostMapping("/update")
-    public @ResponseBody ModelAndView edit(@RequestParam("firstname") String firstname,
+    public @ResponseBody ModelAndView edit(
+    		@RequestParam("firstname") String firstname,
     		@RequestParam("lastname") String lastname,
     		@RequestParam("userName") String userName,
             @RequestParam("address") String address,
@@ -187,12 +195,13 @@ public class StudentController {
             @RequestParam("doctorName") String doctorName,
             @RequestParam("docPhone") String docPhone)
     {
-		//Student editStudent=new Student(0, userName, firstname,lastname,address,city,postalCode,stdPhone,doctorName,docPhone, docPhone);
-        //studentRepo.save(editStudent);
-        Student editStudent = new Student();
-		//editStudent = studentRepo.findByUserName(userName).get(0);
-		model.put("studentInfo", editStudent);
-        return new ModelAndView("profile","model", model);
-       
+		Student student = (Student) model.get("studentInfo");
+		String password = student.userPassword;
+		int studentId = student.studentId;
+		Student updatedStudent = new Student(studentId,userName,password,firstname,lastname,address,city,postalCode,stdPhone,doctorName, docPhone);
+		
+		studentRepo.save(updatedStudent);
+		
+        return new ModelAndView("home","model", model);
     }
 }
