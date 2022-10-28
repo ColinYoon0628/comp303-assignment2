@@ -10,8 +10,17 @@
 <body>
  <div class="topnav">
   <a class="active" href="home">Home</a>
-  <a href="profile">Profile</a>
-  <a href="history">History</a>
+  <a>
+    <form class="nav-btn" action="navigateToProfile" method="post">
+		<input class="nav-item" type="submit" value="Profile"/>
+  </form>  
+  </a>
+  <a>
+    <form class="nav-btn" action="navigateToHistory" method="post">
+		<input class="nav-item" type="submit" value="History"/>
+  </form>
+  </a>
+
 
 </div>
 

@@ -139,4 +139,28 @@ public class StudentController {
 	{
 		return "home";
 	}
+	
+	@RequestMapping("/history")
+	public String History() 
+	{
+		return "history";
+	}
+	
+	@PostMapping("/navigateToHistory")
+    public  @ResponseBody ModelAndView navigateHistory()
+    {
+		return new ModelAndView("history","model", model);
+    }
+	
+	@RequestMapping("/profile")
+	public String Profile() 
+	{
+		return "profile";
+	}
+	
+	@PostMapping("/navigateToProfile")
+    public  @ResponseBody ModelAndView navigateProfile()
+    {
+		return new ModelAndView("profile","model", model);
+    }
 }
