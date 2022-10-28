@@ -52,7 +52,7 @@ public class StudentController {
 	}
 	
 	@PostMapping("/signIn")
-    public @ResponseBody String add(@RequestParam("studentId") int studentId,
+    public @ResponseBody ModelAndView add(@RequestParam("studentId") int studentId,
             @RequestParam("userName") String userName,
             @RequestParam("userPassword") String userPassword,
             @RequestParam("firstname") String firstname,
@@ -66,7 +66,7 @@ public class StudentController {
     {
 		Student student=new Student(studentId,userName,userPassword,firstname,lastname,address,city,postalCode,stdPhone,doctorName, docPhone);
 		studentRepo.save(student);
-        return "student is added";
+        return new ModelAndView("index", "model",model);
         
     }
 	
