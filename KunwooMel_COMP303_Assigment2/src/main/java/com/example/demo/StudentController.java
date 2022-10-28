@@ -169,4 +169,30 @@ public class StudentController {
     {
 		return new ModelAndView("profile","model", model);
     }
+	
+	@RequestMapping("/editprofile")
+	public String Modify()
+	{
+		return "editprofile";
+	}
+	
+	@PostMapping("/update")
+    public @ResponseBody ModelAndView edit(@RequestParam("firstname") String firstname,
+    		@RequestParam("lastname") String lastname,
+    		@RequestParam("userName") String userName,
+            @RequestParam("address") String address,
+            @RequestParam("city") String city,
+            @RequestParam("postalCode") String postalCode,
+            @RequestParam("stdPhone") String stdPhone,
+            @RequestParam("doctorName") String doctorName,
+            @RequestParam("docPhone") String docPhone)
+    {
+		//Student editStudent=new Student(0, userName, firstname,lastname,address,city,postalCode,stdPhone,doctorName,docPhone, docPhone);
+        //studentRepo.save(editStudent);
+        Student editStudent = new Student();
+		//editStudent = studentRepo.findByUserName(userName).get(0);
+		model.put("studentInfo", editStudent);
+        return new ModelAndView("profile","model", model);
+       
+    }
 }
