@@ -149,6 +149,12 @@ public class StudentController {
 	@PostMapping("/navigateToHistory")
     public  @ResponseBody ModelAndView navigateHistory()
     {
+		Student student = (Student) model.get("studentInfo");
+		int studentId = student.studentId;
+		List<Registration> registeredSportsList;
+		registeredSportsList = registrationRepo.findByStudentId(studentId);
+
+		model.put("registeredSportsList", registeredSportsList);
 		return new ModelAndView("history","model", model);
     }
 	

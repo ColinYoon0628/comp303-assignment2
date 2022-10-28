@@ -20,8 +20,6 @@
 		<input class="nav-item" type="submit" value="History"/>
   </form>
   </a>
-
-
 </div>
 
 <div style="padding-left:16px">

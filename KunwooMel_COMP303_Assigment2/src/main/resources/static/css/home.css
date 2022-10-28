@@ -54,3 +54,20 @@ body {
   color: white;
 }
 
+.history-container {
+	margin-left:10px;
+}
+.section {
+  display: table;
+  width: 100%;
+}
+
+section > * {
+  display: table-row;
+}
+
+section .col {
+  display: table-cell;
+  width: 8rem;
+    padding: 8px;
+}
