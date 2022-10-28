@@ -1,3 +1,9 @@
+/*
+ * Name: Mel Vincent Anonuevo & Kunwoo Yoon
+ * ID#: 301167069 &
+ * Date: Oct 28, 2022
+ * */
+
 package com.example.demo;
 
 import javax.persistence.Column;

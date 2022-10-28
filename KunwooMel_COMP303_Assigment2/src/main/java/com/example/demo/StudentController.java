@@ -1,3 +1,9 @@
+/*
+ * Name: Mel Vincent Anonuevo & Kunwoo Yoon
+ * ID#: 301167069 &
+ * Date: Oct 28, 2022
+ * */
+
 package com.example.demo;
 
 import java.time.LocalDate;
@@ -17,6 +23,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class StudentController {
+	
+	//Repositories
 	@Autowired
 	private StudentRepository studentRepo;
 	@Autowired
@@ -25,11 +33,14 @@ public class StudentController {
 	private RegistrationRepository registrationRepo;
 	Map<String, Object> model = new HashMap<String, Object>();
 
+	//Homepage
 	@RequestMapping("/") //http://localhost:8085/
 	public String home() 
 	{
 		return "index";
 	}
+	
+	//Login
 	@PostMapping("/login")
 	public @ResponseBody ModelAndView add(
 			@RequestParam("userName") String userName,  
@@ -51,6 +62,7 @@ public class StudentController {
 		return "signIn";
 	}
 	
+	//User Registration
 	@PostMapping("/signIn")
     public @ResponseBody ModelAndView add(@RequestParam("studentId") int studentId,
             @RequestParam("userName") String userName,
@@ -76,6 +88,7 @@ public class StudentController {
 		return "signIn";
 	}
 	
+	//Selecting of Sports
 	@PostMapping("/selectSports")
     public @ResponseBody ModelAndView add(@RequestParam("sportsCheckbox") int sportId)
     {
@@ -92,6 +105,7 @@ public class StudentController {
 		return "register";
 	}
 	
+	//Registering the selected Sports
 	@PostMapping("/registeredSports")
     public  @ResponseBody ModelAndView registration(
             @RequestParam("startDate") String startDate,
@@ -121,12 +135,15 @@ public class StudentController {
 		registrationRepo.save(registeredSport);
 		return new ModelAndView("confirmation","model", model);
     }
+	
+	//Payment & Registration Confirmation
 	@RequestMapping("/confirmation")
 	public String confirmation () 
 	{
 		return "confirmation";
 	}
 	
+	//Going to Homepage
 	@PostMapping("/navigatoToHome")
     public  @ResponseBody ModelAndView navigateHome()
     {
@@ -146,6 +163,8 @@ public class StudentController {
 		return "history";
 	}
 	
+	
+	//Navbar going to sports record
 	@PostMapping("/navigateToHistory")
     public  @ResponseBody ModelAndView navigateHistory()
     {
@@ -164,6 +183,7 @@ public class StudentController {
 		return "profile";
 	}
 	
+	//Navbar going to profile info
 	@PostMapping("/navigateToProfile")
     public  @ResponseBody ModelAndView navigateProfile()
     {
@@ -183,6 +203,7 @@ public class StudentController {
 		return "editprofile";
 	}
 	
+	//Updating user information
 	@PostMapping("/update")
     public @ResponseBody ModelAndView edit(
     		@RequestParam("firstname") String firstname,
